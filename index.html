@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> </head>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search"
+    />
+  </head>
   <body>
-    <h1>Hello World</h1>
+    <!-- Navigation oben rechts -->
+    <div class="navigation">
+      <a href="images.html">Image Search</a>
+      <a href="advanced.html">Advanced Search</a>
+    </div>
+
+    <!-- Suchformular -->
+    <div class="search-container">
+      <p class="logo">Google</p>
+      <form action="https://www.google.com/search" method="get">
+        <div class="search-input-wrapper">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" name="q" class="search-input" />
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Google Search" />
+          <input type="submit" name="btnI" value="I'm Feeling Lucky" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>

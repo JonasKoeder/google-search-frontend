@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-color: #262626;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end; /* nicht "align-items: right" */
+  gap: 20px;
+  padding: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Um es vertikal zu zentrieren */
+}
+
+.search-input {
+  width: 600px; /* Breite statt padding-left! */
+  padding: 15px 20px; /* Innenabstand gleichmäßig */
+  border: 1px solid #5f6162;
+  border-radius: 24px; /* Mehr Rundung für Google-Look */
+  font-size: 16px;
+  margin-bottom: 20px;
+  background-color: #5f6162;
+}
+.logo{
+  font-size: 80px;
+  justify-content: center;
+  margin: 15px;
+  font-weight: 550;
+  color:white;
+}
+.search-input-wrapper {
+  position: relative;
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  color: #b2b4b6;
+  font-size: 30px;
+  margin-right: 10px;
+  position: absolute;
+  left: 13px;
+  top: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center ;
+}
+
+.buttons input {
+  padding: 10px 20px;
+  border: 1px solid #2e2f30;
+  background-color: #2e2f30;
+  color: #dde2e6;
+  font-weight: 800;
+  border-radius: 4px;
+  cursor: pointer;
+}
