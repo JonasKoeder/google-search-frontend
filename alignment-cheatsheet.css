@@ -1,0 +1,614 @@
+/* ============================================
+   CSS AUSRICHTUNGS-CHEATSHEET
+   ============================================ */
+
+/* ==========================================
+   1. FLEXBOX - Container Properties
+   ========================================== */
+
+   .flex-container {
+    display: flex; /* Aktiviert Flexbox */
+  }
+  
+  /* HORIZONTALE AUSRICHTUNG (justify-content) */
+  .flex-center-horizontal {
+    justify-content: center; /* Zentriert horizontal */
+  }
+  
+  .flex-start {
+    justify-content: flex-start; /* Links ausrichten (Standard) */
+  }
+  
+  .flex-end {
+    justify-content: flex-end; /* Rechts ausrichten */
+  }
+  
+  .flex-space-between {
+    justify-content: space-between; /* Erstes links, letztes rechts, Platz dazwischen */
+  }
+  
+  .flex-space-around {
+    justify-content: space-around; /* Gleicher Abstand um alle Elemente */
+  }
+  
+  .flex-space-evenly {
+    justify-content: space-evenly; /* Perfekt gleichmäßiger Abstand */
+  }
+  
+  /* VERTIKALE AUSRICHTUNG (align-items) */
+  .flex-center-vertical {
+    align-items: center; /* Vertikal zentrieren */
+  }
+  
+  .flex-align-start {
+    align-items: flex-start; /* Oben ausrichten */
+  }
+  
+  .flex-align-end {
+    align-items: flex-end; /* Unten ausrichten */
+  }
+  
+  .flex-align-stretch {
+    align-items: stretch; /* Auf volle Höhe strecken (Standard) */
+  }
+  
+  /* RICHTUNG */
+  .flex-row {
+    flex-direction: row; /* Horizontal (Standard) */
+  }
+  
+  .flex-column {
+    flex-direction: column; /* Vertikal stapeln */
+  }
+  
+  .flex-row-reverse {
+    flex-direction: row-reverse; /* Horizontal umgekehrt */
+  }
+  
+  .flex-column-reverse {
+    flex-direction: column-reverse; /* Vertikal umgekehrt */
+  }
+  
+  /* ABSTÄNDE */
+  .flex-gap {
+    gap: 20px; /* Moderner Weg für Abstände zwischen Flex-Items */
+  }
+  
+  /* WRAPPING */
+  .flex-wrap {
+    flex-wrap: wrap; /* Elemente umbrechen bei zu wenig Platz */
+  }
+  
+  .flex-nowrap {
+    flex-wrap: nowrap; /* Kein Umbrechen (Standard) */
+  }
+  
+  /* ==========================================
+     2. FLEXBOX - Item Properties
+     ========================================== */
+  
+  .flex-item-grow {
+    flex: 1; /* Element nimmt verfügbaren Platz ein */
+  }
+  
+  .flex-item-no-grow {
+    flex: 0; /* Element behält seine Größe */
+  }
+  
+  .flex-item-auto {
+    flex: auto; /* Element wächst und schrumpft basierend auf Inhalt */
+  }
+  
+  .flex-item-align-self {
+    align-self: center; /* Überschreibt align-items für dieses Element */
+  }
+  
+  /* ==========================================
+     3. POSITIONING
+     ========================================== */
+  
+  /* POSITION TYPES */
+  .position-relative {
+    position: relative; /* Eltern-Element als Referenzpunkt */
+  }
+  
+  .position-absolute {
+    position: absolute; /* Frei positionierbar relativ zum nächsten relative Parent */
+    top: 0;
+    left: 0;
+    /* right: 0; bottom: 0; auch möglich */
+  }
+  
+  .position-fixed {
+    position: fixed; /* Bleibt beim Scrollen an Ort und Stelle */
+    top: 0;
+    left: 0;
+  }
+  
+  .position-sticky {
+    position: sticky; /* Wird sticky beim Scrollen */
+    top: 0;
+  }
+  
+  .position-static {
+    position: static; /* Normal flow (Standard) */
+  }
+  
+  /* ABSOLUTE POSITIONING BEISPIELE */
+  .absolute-top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .absolute-top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .absolute-bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .absolute-bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  /* PERFEKTE ZENTRIERUNG mit absolute */
+  .absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Nur horizontal zentrieren */
+  .absolute-center-horizontal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Nur vertikal zentrieren */
+  .absolute-center-vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Z-INDEX (Stapelreihenfolge) */
+  .z-index-high {
+    z-index: 999; /* Höhere Zahl = weiter vorne */
+  }
+  
+  /* ==========================================
+     4. BOX MODEL - Größen und Abstände
+     ========================================== */
+  
+  /* BREITE */
+  .full-width {
+    width: 100%; /* Volle Breite des Eltern-Elements */
+  }
+  
+  .fixed-width {
+    width: 500px; /* Feste Breite */
+  }
+  
+  .max-width-limited {
+    width: 100%;
+    max-width: 800px; /* Maximale Breite begrenzen */
+  }
+  
+  .min-width {
+    min-width: 300px; /* Minimale Breite */
+  }
+  
+  /* HÖHE */
+  .full-height {
+    height: 100vh; /* Volle Viewport-Höhe */
+  }
+  
+  .full-height-percent {
+    height: 100%; /* 100% des Eltern-Elements */
+  }
+  
+  .max-height {
+    max-height: 500px;
+    overflow: auto; /* Scrollbar bei Überlauf */
+  }
+  
+  /* BOX-SIZING */
+  .box-sizing-border {
+    box-sizing: border-box; /* Padding & Border in width eingerechnet! WICHTIG! */
+  }
+  
+  .box-sizing-content {
+    box-sizing: content-box; /* Standard: Padding & Border extra zur width */
+  }
+  
+  /* MARGIN (Außenabstand) */
+  .margin-auto-center {
+    margin: 0 auto; /* Horizontal zentrieren (braucht width oder max-width) */
+  }
+  
+  .margin-all {
+    margin: 20px; /* Alle Seiten 20px */
+  }
+  
+  .margin-vertical {
+    margin: 20px 0; /* Oben/Unten 20px, Links/Rechts 0 */
+  }
+  
+  .margin-horizontal {
+    margin: 0 20px; /* Oben/Unten 0, Links/Rechts 20px */
+  }
+  
+  .margin-custom {
+    margin: 10px 20px 30px 40px; /* Oben Rechts Unten Links (Uhrzeigersinn) */
+  }
+  
+  /* PADDING (Innenabstand) */
+  .padding-all {
+    padding: 20px; /* Alle Seiten 20px */
+  }
+  
+  .padding-vertical {
+    padding: 20px 0; /* Oben/Unten 20px, Links/Rechts 0 */
+  }
+  
+  .padding-horizontal {
+    padding: 0 20px; /* Oben/Unten 0, Links/Rechts 20px */
+  }
+  
+  .padding-custom {
+    padding: 10px 20px 30px 40px; /* Oben Rechts Unten Links */
+  }
+  
+  /* ==========================================
+     5. TEXT-AUSRICHTUNG
+     ========================================== */
+  
+  .text-left {
+    text-align: left; /* Text linksbündig */
+  }
+  
+  .text-center {
+    text-align: center; /* Text zentriert */
+  }
+  
+  .text-right {
+    text-align: right; /* Text rechtsbündig */
+  }
+  
+  .text-justify {
+    text-align: justify; /* Text Blocksatz */
+  }
+  
+  /* VERTIKALE TEXT-AUSRICHTUNG in Inline-Elementen */
+  .vertical-align-top {
+    vertical-align: top;
+  }
+  
+  .vertical-align-middle {
+    vertical-align: middle;
+  }
+  
+  .vertical-align-bottom {
+    vertical-align: bottom;
+  }
+  
+  /* ==========================================
+     6. GRID LAYOUT
+     ========================================== */
+  
+  .grid-container {
+    display: grid;
+  }
+  
+  /* SPALTEN definieren */
+  .grid-two-columns {
+    grid-template-columns: 1fr 1fr; /* 2 gleich große Spalten */
+  }
+  
+  .grid-three-columns {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 gleich große Spalten */
+  }
+  
+  .grid-custom-columns {
+    grid-template-columns: 200px 1fr; /* 200px feste Breite + Rest */
+  }
+  
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive: Passt automatisch Spalten an */
+  }
+  
+  /* REIHEN definieren */
+  .grid-rows {
+    grid-template-rows: 100px auto 50px; /* Feste Höhen */
+  }
+  
+  /* GAPS */
+  .grid-gap {
+    gap: 20px; /* Abstand zwischen allen Zellen */
+  }
+  
+  .grid-gap-separate {
+    row-gap: 20px;    /* Vertikaler Abstand */
+    column-gap: 10px; /* Horizontaler Abstand */
+  }
+  
+  /* AUSRICHTUNG im Grid */
+  .grid-center-all {
+    place-items: center; /* Horizontal UND vertikal zentriert! */
+  }
+  
+  .grid-justify-items {
+    justify-items: center; /* Horizontal zentrieren */
+  }
+  
+  .grid-align-items {
+    align-items: center; /* Vertikal zentrieren */
+  }
+  
+  /* GRID ITEM - Positionierung */
+  .grid-item-span {
+    grid-column: span 2; /* Element über 2 Spalten */
+    grid-row: span 2;    /* Element über 2 Reihen */
+  }
+  
+  .grid-item-position {
+    grid-column: 1 / 3; /* Von Spalte 1 bis 3 */
+    grid-row: 2 / 4;    /* Von Reihe 2 bis 4 */
+  }
+  
+  /* ==========================================
+     7. TRANSFORM
+     ========================================== */
+  
+  /* TRANSLATION (Verschieben) */
+  .transform-translate {
+    transform: translate(50px, 100px); /* X: 50px rechts, Y: 100px runter */
+  }
+  
+  .transform-translateX {
+    transform: translateX(50px); /* Nur horizontal */
+  }
+  
+  .transform-translateY {
+    transform: translateY(-50%); /* 50% seiner eigenen Höhe nach oben */
+  }
+  
+  /* ROTATION */
+  .transform-rotate {
+    transform: rotate(45deg); /* 45 Grad drehen */
+  }
+  
+  /* SCALE (Skalieren) */
+  .transform-scale {
+    transform: scale(1.5); /* 150% Größe */
+  }
+  
+  .transform-scale-xy {
+    transform: scale(2, 0.5); /* 200% breit, 50% hoch */
+  }
+  
+  /* KOMBINIERT */
+  .transform-combined {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+  
+  /* TRANSFORM ORIGIN */
+  .transform-origin-center {
+    transform-origin: center center; /* Dreht um die Mitte (Standard) */
+  }
+  
+  .transform-origin-topleft {
+    transform-origin: top left; /* Dreht um obere linke Ecke */
+  }
+  
+  /* ==========================================
+     8. DISPLAY TYPES
+     ========================================== */
+  
+  .display-block {
+    display: block; /* Nimmt volle Breite ein, neuer Zeilenumbruch */
+  }
+  
+  .display-inline {
+    display: inline; /* Nur so breit wie Inhalt, kein Zeilenumbruch */
+  }
+  
+  .display-inline-block {
+    display: inline-block; /* Wie inline, aber width/height möglich */
+  }
+  
+  .display-none {
+    display: none; /* Element wird nicht angezeigt (kein Platz) */
+  }
+  
+  .visibility-hidden {
+    visibility: hidden; /* Element unsichtbar, aber Platz bleibt */
+  }
+  
+  /* ==========================================
+     9. OVERFLOW
+     ========================================== */
+  
+  .overflow-visible {
+    overflow: visible; /* Inhalt kann über Element hinausgehen (Standard) */
+  }
+  
+  .overflow-hidden {
+    overflow: hidden; /* Überlaufender Inhalt wird abgeschnitten */
+  }
+  
+  .overflow-scroll {
+    overflow: scroll; /* Immer Scrollbars */
+  }
+  
+  .overflow-auto {
+    overflow: auto; /* Scrollbars nur bei Bedarf */
+  }
+  
+  .overflow-x-scroll {
+    overflow-x: auto; /* Nur horizontal scrollen */
+  }
+  
+  .overflow-y-scroll {
+    overflow-y: auto; /* Nur vertikal scrollen */
+  }
+  
+  /* ==========================================
+     10. PRAKTISCHE KOMBOS
+     ========================================== */
+  
+  /* POWER-COMBO 1: Horizontal zentrieren (Block) */
+  .center-block {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  /* POWER-COMBO 2: Flex Container mit zentriertem Inhalt */
+  .flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* POWER-COMBO 3: Element links, andere rechts */
+  .flex-space-between-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* POWER-COMBO 4: Absolutes Element perfekt zentriert */
+  .absolute-perfect-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* POWER-COMBO 5: Responsive Breite mit Limit */
+  .responsive-width {
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  
+  /* POWER-COMBO 6: Sticky Header */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+  }
+  
+  /* POWER-COMBO 7: Card Layout mit Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* POWER-COMBO 8: Full-Page Container */
+  .full-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* POWER-COMBO 9: Centered Form */
+  .centered-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  /* POWER-COMBO 10: Icon im Input (wie deine Lupe) */
+  .input-with-icon-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .input-with-icon {
+    width: 100%;
+    padding-left: 45px;
+    box-sizing: border-box;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* ==========================================
+     11. RESPONSIVE HELPERS
+     ========================================== */
+  
+  /* Container mit max-width */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive Typography */
+  .responsive-text {
+    font-size: clamp(16px, 2vw, 24px); /* Min 16px, ideal 2vw, max 24px */
+  }
+  
+  /* Hide on Mobile */
+  @media (max-width: 768px) {
+    .hide-mobile {
+      display: none;
+    }
+  }
+  
+  /* Hide on Desktop */
+  @media (min-width: 769px) {
+    .hide-desktop {
+      display: none;
+    }
+  }
+  
+  /* ==========================================
+     12. POINTER EVENTS & CURSOR
+     ========================================== */
+  
+  .pointer-events-none {
+    pointer-events: none; /* Klicks gehen durch Element hindurch */
+  }
+  
+  .pointer-events-auto {
+    pointer-events: auto; /* Normal klickbar (Standard) */
+  }
+  
+  .cursor-pointer {
+    cursor: pointer; /* Hand-Cursor bei Hover */
+  }
+  
+  .cursor-not-allowed {
+    cursor: not-allowed; /* Verboten-Symbol */
+  }
+  
+  /* ==========================================
+     ENDE CHEATSHEET
+     ========================================== */

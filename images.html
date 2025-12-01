@@ -3,17 +3,35 @@
   <head>
     <title>Image Search</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search"
+    />
   </head>
   <body>
-    <div class="navigation">
+    <!-- Navigation oben rechts -->
+    <div class="navigation_normal_search">
       <a href="index.html">Search</a>
       <a href="advanced.html">Advanced Search</a>
     </div>
+
+    <!-- Suchformular -->
     <div class="search-container">
       <p class="logo">Google</p>
-      <form action="https://www.google.com/images" method="get"></form>
+      <form action="https://www.google.com/search" method="get">
+        <!-- Versteckter Parameter für Bildersuche -->
+        <input type="hidden" name="tbm" value="isch" />
+        <!-- tbm = type of media, isch = images, sagt google dass wir eine Bildersuche durchführen wollen -->
+
+        <div class="search-input-wrapper">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" name="q" class="search-input" autofocus />
+        </div>
+
+        <div class="buttons">
+          <input type="submit" value="Google Images" />
+        </div>
       </form>
-        <input type="submit" value="Google Images" />
     </div>
   </body>
 </html>

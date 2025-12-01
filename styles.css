@@ -8,16 +8,29 @@ body {
 
 .navigation {
   display: flex;
-  justify-content: flex-end; /* nicht "align-items: right" */
-  gap: 20px;
+  justify-content: space-between; /* nicht "align-items: right" */
+  align-items: center;
   padding: 20px;
 }
-
+.navigation-links {
+  display: flex;
+  gap: 20px;
+}
 .navigation a {
   text-decoration: none;
   color: #f4f4f4;
 }
-
+.navigation_normal_search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+.navigation_normal_search a {
+  text-decoration: none;
+  color: #f4f4f4;
+}
 .search-container {
   display: flex;
   flex-direction: column;
@@ -27,13 +40,21 @@ body {
 }
 
 .search-input {
-  width: 600px; /* Breite statt padding-left! */
-  padding: 15px 20px; /* Innenabstand gleichmäßig */
+  width: 100%; /* Breite statt padding-left! */
+  padding: 15px 40px 15px 55px;
   border: 1px solid #5f6162;
   border-radius: 24px; /* Mehr Rundung für Google-Look */
   font-size: 16px;
   margin-bottom: 20px;
   background-color: #5f6162;
+  color: white; /* Textfarbe */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  &:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten beim Focus */
+    outline: none; /* Kein Outline beim Focus */
+  }
+  box-sizing: border-box; /* Breite des Eingabefelds enthält padding */
 }
 .logo{
   font-size: 80px;
@@ -46,15 +67,20 @@ body {
   position: relative;
   width: 600px;
   margin-bottom: 20px;
+  transition: all 0.1s ease; 
+}
+.search-input-wrapper:hover .search-input {
+  box-shadow: 0 2px 8px rgba(70, 69, 69, 0.729);
 }
 
 .search-icon {
   color: #b2b4b6;
   font-size: 30px;
-  margin-right: 10px;
   position: absolute;
-  left: 13px;
-  top: 14px;
+  left: 15px;
+  top: 25px;
+  transform: translateY(-50%); /* Damit die Lupe perfekt zentriert ist */
+  pointer-events: none;
 }
 
 .buttons {
@@ -71,4 +97,83 @@ body {
   font-weight: 800;
   border-radius: 4px;
   cursor: pointer;
+}
+/* Advanced Search */
+.logo_advanced{
+  font-size: 30px;
+  margin: 0;
+  font-weight: 400;
+  color:white;
+}
+.advanced-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.advanced-container h2 {
+  color: #d93025;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.advanced-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-group label {
+  width: 200px;
+  text-align: right;
+  font-size: 13px;
+  color: #818181;
+}
+
+.form-group input {
+  flex: 1;
+  max-width: 500px;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 1px;
+  font-size: 13px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 1px 1px rgba(66,133,244,.2);
+}
+
+.advanced-button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 745px;
+}
+
+.blue-button {
+  background-color: #4285f4;
+  color: white;
+  border: 1px solid #4285f4;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.blue-button:hover {
+  background-color: #3367d6;
+  border-color: #3367d6;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  
 }

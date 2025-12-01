@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- Navigation oben rechts -->
-    <div class="navigation">
+    <div class="navigation_normal_search">
       <a href="images.html">Image Search</a>
       <a href="advanced.html">Advanced Search</a>
     </div>
@@ -21,7 +21,8 @@
       <form action="https://www.google.com/search" method="get">
         <div class="search-input-wrapper">
           <span class="material-symbols-outlined search-icon">search</span>
-          <input type="text" name="q" class="search-input" />
+          <input type="text" name="q" class="search-input" autofocus />
+          <!-- autofocus = das Eingabefeld wird automatisch focusen, wenn die Seite geladen wird -->
         </div>
         <div class="buttons">
           <input type="submit" value="Google Search" />
